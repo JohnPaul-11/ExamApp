@@ -1,0 +1,32 @@
+<h1 class="form-title">User Registration</h1>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form-container">
+  <!-- Form Field Groups -->
+  <div class="form-group" *ngFor="let field of fields">
+    <label [for]="field.id">{{ field.label }}</label>
+    <input
+      [id]="field.id"
+      [type]="field.type"
+      [formControlName]="field.id"
+      class="form-control"
+      [placeholder]="field.placeholder"
+    />
+    <span
+      class="error"
+      *ngIf="
+        registrationForm.get(field.id)?.invalid &&
+        registrationForm.get(field.id)?.touched
+      "
+    >
+      {{ field.errorMessage }}
+    </span>
+  </div>
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    [disabled]="registrationForm.invalid"
+    class="submit-button"
+  >
+    Register
+  </button>
+</form>

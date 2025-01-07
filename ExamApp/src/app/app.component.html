@@ -1,0 +1,32 @@
+<div class="app-container">
+  <header>
+    <span>Event-Driven Programming Exam</span>
+    <div class="theme-toggle" (click)="toggleTheme()">
+      <div class="theme-indicator" [class.dark]="isDarkMode"></div>
+    </div>
+  </header>
+  <nav class="navbar">
+    <div class="nav-center">
+      <a
+        routerLink="/questions"
+        routerLinkActive="active-link"
+        [class.active]="currentRoute === '/questions'"
+      >
+        Questions
+      </a>
+      <a
+        routerLink="/register"
+        routerLinkActive="active-link"
+        [class.active]="currentRoute === '/register'"
+      >
+        Register
+      </a>
+    </div>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    &copy; John Paul Bautista Bateo — BSIT-3A
+  </footer>
+</div>

@@ -1,0 +1,15 @@
+<div class="questions-container">
+  <h1 class="title">Set A: Questions and Answers</h1>
+
+  <div class="questions-list">
+    <div 
+      *ngFor="let question of questions" 
+      class="question-card">
+      <h2 class="question-title">{{ question.title }}</h2>
+      <p class="answer">
+        <span class="label">Answer:</span> 
+        <span class="answer-text">{{ question.answer }}</span>
+      </p>
+    </div>
+  </div>
+</div>
